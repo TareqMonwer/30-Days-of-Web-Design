@@ -1,0 +1,30 @@
+.container {
+  max-width: $siteWidth;
+  margin: 0 auto;
+}
+
+.fc {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.fc.show-tab {
+  display: block;
+}
+
+#add-new-faq.active-modal {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn {
+  border: none;
+  background: $bluishColor;
+  color: #fff;
+  margin: .5rem 0;
+  padding: .5rem 1rem;
+  border-radius: 3px;
+}

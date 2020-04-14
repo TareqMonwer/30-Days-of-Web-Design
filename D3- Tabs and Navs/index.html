@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3 | Modal and Tabs</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+
+
+<!-- Fullscreen Welcome -->
+<section id="welcome">
+  <div class="container">
+    <div>
+      <h1>welcome to <q>openpodcast</q></h1>
+      <div class="links">
+        <a href=""><i class="fas fa-microphone-alt"></i></a>
+        <a href=""><i class="fas fa-headphones-alt"></i></a>
+        <a href=""><i class="fas fa-code-branch"></i></a>
+        <a href=""><i class="fas fa-brain"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Down-menu -->
+<section id="down-menu">
+  <div class="container">
+    <div class="faq-wrapper">
+      <ul class="faq-pills">
+        <li class="faq-pill">
+          <a href="#" id="software">Software</a>
+        </li>
+        <li class="faq-pill">
+          <a href="#" id="reference">Reference</a>
+        </li>
+        <li class="faq-pill">
+          <a href="#" id="review">Review</a>
+        </li>
+        <li class="faq-pill">
+          <a href="#" id="create-faq">+ New FAQ</a>
+        </li>
+      </ul>
+      <div id="faq-content">
+        <div class="fc software content show-tab">
+          <ul>
+            <li>Recording Software (Any)</li>
+            <li>Python & Django For Applications</li>
+            <li>Gunicorn For Server</li>
+          </ul>
+        </div>
+        <div class="fc reference content">
+          <p>
+            <p>Django Podcast</p>
+            <p>Python Podcast</p>
+          </p>
+        </div>
+        <div class="fc review content">
+          <p>
+            No reviews yet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div id="add-new-faq" class="modal-bg">
+  <div class="modal">
+    <form method="">
+      <div>
+        <label for="tab-title">Title for Tab</label>
+        <input type="text" id="tab-title">
+      </div>
+      <div>
+        <label for="tab-content">Content for Tab</label>
+        <textarea name="tab-content" id="tab-content" cols="30" rows="10"></textarea>
+      </div>
+      <input class="btn" type="submit" value="Create" id="create-faq">
+    </form>
+  </div>
+</div>
+
+<script>
+  /*****
+   * FAQ TAB
+   *****/
+  // variables
+  const faqPills = document.querySelector(".faq-pills");
+  const faqContent = document.getElementById("faq-content");
+  const faqGroup = document.querySelectorAll(".faq-pills > li");
+  const faqContents = document.querySelectorAll("#faq-content div");
+  const addFAQBtn = document.querySelector("#create-faq");
+  const addNewFAQModal = document.querySelector("#add-new-faq");
+  const newFAQSubmitBtn = document.querySelector("#create-faq");
+
+  // Functions
+  // creating new tab with conents
+  const createPill = (pillTitle) => {
+    // creating the pill
+    const pill = document.createElement("li");
+    pill.classList.add("faq-pill");
+
+    const pillText = document.createElement("a");
+    pillText.id = pillTitle;
+    pillText.innerText = pillTitle;
+
+    // append link to pill
+    pill.appendChild(pillText);
+
+    return pill;
+  };
+
+  const createTabContent = (tabContent) => {
+    // creating the content
+    const content = document.createElement("div");
+    const clsName = "fc";
+    content.classList.add(clsName);
+
+    const contentText = document.createElement("p");
+    contentText.textContent = tabContent;
+    // append content in content div
+    content.appendChild(contentText);
+
+    return content;
+  };
+
+  const showNewTabModal = () => {
+    addNewFAQModal.classList.add('active-modal');
+  };
+
+  const createNewFAQ = () => {
+    // TODO DAY 4
+  }
+
+  // toggling tabs
+  const showTabContent = (e) => {
+    e.preventDefault();
+    const token = e.target.id;
+    const target = faqContent.querySelector('.'+token);
+    faqContents.forEach(content => {
+      content.classList.remove('show-tab');
+    });
+    target.classList.add('show-tab');
+  };
+
+  // activating events for tab pills.
+  faqGroup.forEach((faq) => {
+    faq.addEventListener("click", showTabContent)
+  });
+
+  // activating event for creating a new tab.
+  addFAQBtn.addEventListener("click", showNewTabModal);
+  // event listener for creating faq on faq create btn.
+  newFAQSubmitBtn.addEventListener("submit", createNewFAQ);
+</script>
+
+  
+</body>
+</html>
