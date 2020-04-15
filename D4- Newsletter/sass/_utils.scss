@@ -1,0 +1,20 @@
+.container {
+  max-width: $siteWidth;
+  margin: 0 auto;
+}
+
+.btn {
+  border: none;
+  padding: .4rem 1rem;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.btn-bluish {
+  background: $bluishColor;
+  color: #fff;
+}

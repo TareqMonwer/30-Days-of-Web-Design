@@ -69,7 +69,7 @@
 
 <div id="add-new-faq" class="modal-bg">
   <div class="modal">
-    <form method="">
+    <form method="" id="faq-form">
       <div>
         <label for="tab-title">Title for Tab</label>
         <input type="text" id="tab-title">
@@ -95,6 +95,7 @@
   const addFAQBtn = document.querySelector("#create-faq");
   const addNewFAQModal = document.querySelector("#add-new-faq");
   const newFAQSubmitBtn = document.querySelector("#create-faq");
+  const newFAQSubmitForm = document.querySelector("#faq-form");
 
   // Functions
   // creating new tab with conents
@@ -131,8 +132,12 @@
     addNewFAQModal.classList.add('active-modal');
   };
 
-  const createNewFAQ = () => {
-    // TODO DAY 4
+  const createNewFAQ = (e) => {
+    e.preventDefault();
+    let tabTitle = document.getElementById("tab-title").value;
+    let tabContent = document.getElementById("tab-content").value;
+    createPill(tabTitle);
+    createTabContent(tabContent);
   }
 
   // toggling tabs
@@ -147,14 +152,14 @@
   };
 
   // activating events for tab pills.
-  faqGroup.forEach((faq) => {
+  faqGroup.forEach(faq => {
     faq.addEventListener("click", showTabContent)
   });
 
   // activating event for creating a new tab.
   addFAQBtn.addEventListener("click", showNewTabModal);
   // event listener for creating faq on faq create btn.
-  newFAQSubmitBtn.addEventListener("submit", createNewFAQ);
+  newFAQSubmitForm.addEventListener("submit", createNewFAQ);
 </script>
 
   

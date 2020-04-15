@@ -1,0 +1,82 @@
+@import "variables";
+@import "utils";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $primaryColor;
+  color: $textPrimary;
+}
+
+a {
+  text-decoration: none;
+  color: $textPrimary;
+}
+
+#newsletter {
+  width: 100%;
+  height: 50vh;
+  background: rgb(255, 203, 32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .container > div {
+    h2 {
+      color: #fff;
+
+      span {
+        color: $bluishColor;
+      }
+    }
+  }
+
+  &-form {
+    width: 500px;
+
+    .input-group {
+      width: 100%;
+      position: relative;
+      height: 60px;
+      border: 1px solid $bluishColor;
+      border-radius: 50px;
+      background: #fff;
+      box-shadow: 0 4px 10px 0 lighten($bluishColor, 50%);
+      margin: 2rem 0;
+
+      input[type="email"] {
+        background: #fff;
+        border: none;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: $textPrimary;
+        font-weight: 100;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 4px 10px 0 lighten($bluishColor, 50%);
+      }
+    }
+  }
+
+  .social-links a {
+    margin-right: 1rem;
+    color: #fff;
+  }
+}
