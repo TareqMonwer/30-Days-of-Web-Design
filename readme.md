@@ -11,3 +11,5 @@
 
 
 - Day-4: [Newsletter.](https://tareqmonwer.github.io/30-Days-of-Web-Design/D4-%20Newsletter/index.html)
+
+- Day-5: [Newsletter.](https://tareqmonwer.github.io/30-Days-of-Web-Design/D5-%20Slider/index.html)

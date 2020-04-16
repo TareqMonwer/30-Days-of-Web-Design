@@ -1,0 +1,162 @@
+@import "variables";
+@import "utils";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $primaryColor;
+  color: $textPrimary;
+}
+
+a {
+  text-decoration: none;
+  color: $textPrimary;
+}
+
+.btn-light {
+  background: #fff;
+  color: #000;
+}
+
+/* Nav */
+#header-inner {
+	background: #eee;
+	padding: 10px 0;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .2);
+	color: #ff7e0c;
+}
+
+/*********
+* Slider *
+**********/
+.slider-section {
+  overflow-x: hidden;
+
+  #slider, .slide-content, .wrap {
+    height: 100vh;
+  }
+
+  .wrap {
+    position: relative;
+
+    #slider {
+      .slide {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .slide-content {
+          color: #fff;
+          font-size: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+      .slide1 {
+        background-image: url('images/full-moon.jpg');
+      }
+      .slide2 {
+        background-image: url('images/lunar.jpg');
+      }
+      .slide3 {
+        background-image: url('images/milky-way.jpg');
+      }
+    }
+
+    .arrow {
+      height: 0;
+      width: 0;
+      border-style: solid;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #arrow-left {
+      border-width: 40px 60px 40px 0;
+      border-color: transparent #fff transparent transparent;
+      left: 0;
+      margin-left: 1rem;
+    }
+
+    #arrow-right {
+      border-width: 40px 0 40px 60px;
+      border-color: transparent transparent transparent #fff;
+      right: 0;
+      margin-right: 1rem;
+    }
+  }
+}
+
+
+/*************
+* Newsletter *
+*************/
+#newsletter {
+  width: 100%;
+  height: 50vh;
+  background: rgb(255, 203, 32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .container > div {
+    h2 {
+      color: #fff;
+
+      span {
+        color: $bluishColor;
+      }
+    }
+  }
+
+  &-form {
+    width: 500px;
+
+    .input-group {
+      width: 100%;
+      position: relative;
+      height: 60px;
+      border: 1px solid $bluishColor;
+      border-radius: 50px;
+      background: #fff;
+      box-shadow: 0 4px 10px 0 lighten($bluishColor, 50%);
+      margin: 2rem 0;
+
+      input[type="email"] {
+        background: #fff;
+        border: none;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: $textPrimary;
+        font-weight: 100;
+      }
+
+      input[type="submit"] {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 4px 10px 0 lighten($bluishColor, 50%);
+      }
+    }
+  }
+
+  .social-links a {
+    margin-right: 1rem;
+    color: #fff;
+  }
+}

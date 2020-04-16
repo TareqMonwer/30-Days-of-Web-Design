@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-5 | Slider</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script
+      src="https://kit.fontawesome.com/16475baae0.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div id="header-inner">
+      <!-- Navbar -->
+      <div class="container">
+        <nav id="main-nav">
+          <h3>30DAYS-OF-WD</h3>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div>
+      <!-- Slider -->
+      <div class="slider-section">
+        <div class="wrap">
+          <div id="arrow-left" class="arrow"></div>
+          <div id="slider">
+            <div class="slide slide1">
+              <div class="slide-content">
+                <span>See The Full Moon</span>
+                <div>
+                  <a href="" class="btn btn-rounded btn-light">See Locations</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide slide2">
+              <div class="slide-content">
+                <span>Milky-Way</span>
+                <div>
+                  <a href="" class="btn btn-rounded btn-light">See Locations</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide slide3">
+              <div class="slide-content">
+                <span>The Moon</span>
+                <div>
+                  <a href="" class="btn btn-rounded btn-light">See Locations</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="arrow-right" class="arrow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section id="newsletter">
+      <div class="container">
+        <div>
+          <h2>DREAM<span>GAME</span></h2>
+
+          <form id="newsletter-form">
+            <div class="input-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email to subscribe newsletter"
+              />
+              <input
+                type="submit"
+                value="submit"
+                class="btn btn-rounded btn-bluish"
+              />
+            </div>
+          </form>
+
+          <div class="social-links">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-dribbble"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- JS -->
+    <script>
+
+      let sliderImages = document.querySelectorAll(".slide");
+      let arrowLeft = document.querySelector("#arrow-left");
+      let arrowRight = document.querySelector("#arrow-right");
+      let current = 0;
+
+      // Clear all images
+      const reset = () => {
+        sliderImages.forEach(slide => {
+          slide.style.display = "none";
+        })
+      };
+
+      // Initializer
+      const startSlide = () => {
+        reset();
+        sliderImages[0].style.display = "block";
+      }
+
+      // Show prev slide
+      const slideLeft = () => {
+        reset();
+        sliderImages[current - 1].style.display = "block";
+        current--;
+      }
+
+      // Show next slide
+      const slideRight = () => {
+        reset();
+        sliderImages[current  + 1].style.display = "block";
+        current++;
+      }
+
+      // left arrow event
+      arrowLeft.addEventListener("click", () => {
+        if (current === 0) {
+          current = sliderImages.length;
+        }
+        slideLeft();
+      })
+
+      // right arrow event
+      arrowRight.addEventListener("click", () => {
+        if (current === sliderImages.length - 1) {
+          current = -1;
+        }
+        slideRight();
+      })
+
+      // call slider
+      startSlide();
+
+    </script>
+  </body>
+</html>
