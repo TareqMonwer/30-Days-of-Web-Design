@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day-6 | SliderGlide</title>
+    <link rel="stylesheet" href="glide-3.4.1/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="glide-3.4.1/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> 
+    <script src="glide-3.4.1/dist/glide.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/16475baae0.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+<body>
+  <div id="header">
+    <div class="top-notch"></div>
+    <nav class="menubar">
+      <a href="">home</a>
+      <a href="">services</a>
+      <a href="">pricing</a>
+      <a href="">community</a>
+    </nav>
+
+    <div id="banner">
+      <div class="banner-content">
+        <h1 class="banner-title">Everything in one platform</h1>
+      </div>
+    </div>
+
+    <div id="slider-glider" class="">
+      <div class="glide">
+
+        <!-- the slider container -->
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <h1>Reusable Code Snippets</h1>
+              <p>Write once, use forever!</p>
+            </li>
+            <li class="glide__slide">
+              <h1>Unlimitted Code Review For Free!</h1>
+              <p>Everyone makes mistake! So we provide code-reviews for FREE.</p>
+            </li>
+            <li class="glide__slide">
+              <h1>Get Faster CDN</h1>
+              <p>Host your media & static files in efficient way.</p>
+            </li>
+            <li class="glide__slide">
+              <h1>Developer, Engineer Community for Mentorship</h1>
+              <p>Large community of engineers are availabel 24/7.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- left-right arrows -->
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left"
+          data-glide-dir="<"><i class="fa fa-chevron-left"></i></button>
+          <button class="glide__arrow glide__arrow--right"
+          data-glide-dir=">"><i class="fa fa-chevron-right"></i></button>
+        </div>
+
+        <!-- bullets -->
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+        </div>
+
+        <!-- start-end control buttons -->
+        <!-- <div data-glide-el="controls">
+          <button data-glide-dir="<<">Start</button>
+          <button data-glide-dir=">>">End</button>
+        </div> -->
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="service">
+          <i class="fas fa-code"></i>
+          <h3>Clean Code</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, iusto!</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-user-secret"></i>
+          <h3>High Security</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, iusto!</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-sitemap"></i>
+          <h3>Awesome Collaboration</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-microchip"></i>
+          <h3>Hardware Solution</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, iusto!</p>
+        </div>
+        <div class="service">
+          <i class="far fa-folder"></i>
+          <h3>Data Management</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, iusto!</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-code-branch"></i>
+          <h3>Source Control</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, iusto!</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+  <!-- JS -->
+  <script>
+    let glide = new Glide('.glide', {
+      gap: '10',
+      perView: 2.5
+    })
+    
+    glide.mount();
+
+    // sticky nav
+    window.onscroll = function() {stickyNav()};
+    let nav = document.querySelector('.menubar');
+    let sticky = nav.offsetTop;
+
+    function stickyNav(){
+      if (window.pageYOffset >= sticky) {
+        nav.classList.add('sticky');
+      } else {
+        nav.classList.remove('sticky');
+      }
+    }
+  </script>
+</body>
+</html>
