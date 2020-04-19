@@ -1,0 +1,175 @@
+:root {
+  --orangy-color: rgb(248, 176, 43);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #15308F 0%, rgba(255, 255, 255, 0) 100%), #0028B6;
+  color: #fff;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* UTILS */
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 1.8rem;
+  color: #fff;
+  background: var(--orangy-color);
+  display: inline-block;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+
+/* Top */
+#top-head {
+  position: relative;
+}
+
+#nav {
+  display: flex;
+  justify-content: end;
+  margin: 2rem 0;
+}
+
+#nav a {
+  color: #fff;
+  margin-right: 2rem;
+}
+
+#top-head-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  font-size: 4rem;
+  line-height: 1.3;
+}
+
+.shape.triangle1 {
+	position: absolute;
+	top: 19%;
+	left: 32%;
+	transform: rotate(200deg);
+}
+
+.shape.circle {
+	position: absolute;
+	right: 0;
+	top: 90%;
+}
+
+
+.images img:first-child {
+	position: absolute;
+	top: 51%;
+	left: 76%;
+}
+
+.shape.triangle {
+  position: absolute;
+  top: 80%;
+}
+
+
+#contents {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  min-height: 30vh;
+  align-items: center;
+}
+
+#contents h1 {
+  margin-bottom: 2rem;
+}
+
+#contents .contents-text {
+  width: 70%;
+  margin-right: 4rem;
+}
+
+.play {
+  cursor: pointer;
+}
+
+#featured {
+  padding: 1rem 0 3rem 0;
+}
+
+#featured h1 {
+  margin-bottom: 2rem;
+}
+
+#featured .featured-boxes {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas: "a a a b b b"
+                     "c c d d e e";
+}
+
+
+.fb {
+  background: #fff;
+  padding: 1rem;
+  color: #062AAA;
+  position: relative;
+  overflow: hidden;
+}
+.fb::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: -50px;
+  right: -50px;
+  position: absolute;
+  background: var(--orangy-color);
+}
+
+.fb1 {
+  grid-area: a;
+}
+
+.fb2 {
+  grid-area: b;
+}
+
+.fb3 {
+  grid-area: c;
+}
+
+
+.fb4 {
+  grid-area: d;
+}
+
+
+.fb5 {
+  grid-area: e;
+}
+
+
