@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #363636;
+  color: #fff; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  width: 1100px;
+  margin: 0 auto; }
+
+.btn {
+  border: none;
+  padding: .5rem 1.5rem;
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  background: peru; }
+
+.delete {
+  background: red;
+  color: #fff;
+  padding: .8rem;
+  display: inline-block; }
+
+.success,
+.error {
+  color: #fff;
+  padding: 5px;
+  margin: 5px 0 15px 0; }
+
+.success {
+  background: #02ad66; }
+
+.error {
+  background: #af003b; }
+
+#book-app h1 {
+  text-align: center; }
+#book-app #book-form {
+  max-width: 400px;
+  margin: 0 auto; }
+  #book-app #book-form div {
+    margin-bottom: 1rem; }
+    #book-app #book-form div input[type="text"] {
+      width: 100%;
+      min-height: 30px;
+      padding: .4rem .6rem;
+      color: peru;
+      font-size: 18px;
+      border: 1px solid peru;
+      border-radius: 3px; }
+  #book-app #book-form input[type="submit"] {
+    width: 100%;
+    color: #fff; }
+#book-app #book-list-table {
+  width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse; }
+  #book-app #book-list-table th,
+  #book-app #book-list-table td {
+    padding: 7px 10px 10px 10px; }
+  #book-app #book-list-table th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid #dadada;
+    text-align: left; }
+  #book-app #book-list-table tr:nth-child(even) {
+    background-color: #cc6300; }
+
+/*# sourceMappingURL=main.css.map */
