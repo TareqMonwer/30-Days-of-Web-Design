@@ -38,11 +38,15 @@ a {
     display: inline-block;
 }
 
+.message {
+    width: 300px;
+    margin: 0 auto;
+}
+
 .success,
 .error {
     color: #fff;
     padding: 5px;
-    margin: 5px 0 15px 0;
 }
 
 .success {

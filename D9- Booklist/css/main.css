@@ -30,11 +30,14 @@ a {
   padding: .8rem;
   display: inline-block; }
 
+.message {
+  width: 300px;
+  margin: 0 auto; }
+
 .success,
 .error {
   color: #fff;
-  padding: 5px;
-  margin: 5px 0 15px 0; }
+  padding: 5px; }
 
 .success {
   background: #02ad66; }
