@@ -1,0 +1,5 @@
+
+
+The onload handler won't be called for yet another reason, I'm adding it here just so it can be helpful to someone else referencing this page.
+
+If the HTTP response is malformed, the onload handler will not be called either. For example, a plaintext response of 10 bytes that advertises a length of 14 in Content-Length header will not invoke the onload handler. I wasted hours on client code before I start to replace back-end units with test stubs.
